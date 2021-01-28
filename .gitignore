@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # model
-./SkyAR/ResNet50FCN/__model__
-./SkyAR/ResNet50FCN/__params__
+SkyAR/ResNet50FCN/__model__
+SkyAR/ResNet50FCN/__params__
