@@ -36,8 +36,15 @@
 ![Creative Commons License](https://camo.githubusercontent.com/f05d4039b67688cfdf339d2a445ad686a60551f9891734c418f7096184de5fac/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d6e632d73612f342e302f38387833312e706e67) [SkyAR](https://github.com/jiupinjia/SkyAR) by [Zhengxia Zou](http://www-personal.umich.edu/~zzhengxi/) is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 # Quick Start
+* clone or download the code
+
+* download the pretrained model：[link](https://bj.bcebos.com/v1/ai-studio-online/232021343ede409f92d512707c04d870f8b267035e86412084cf838f83afc6cb?responseContentDisposition=attachment%3B%20filename%3DResNet50FCN.zip&authorization=bce-auth-v1%2F0ef6765c1e494918bc0d4c3ca3e5c6d1%2F2021-01-25T08%3A44%3A17Z%2F-1%2F%2F7afd50b9b0d15e6eec3cac9ca3c213d33695474539b9fdc6cfe8d1a8d8525909)
+
+* unpack the pretrained model
+
+* run main.py
 ```shell
-$ python main.py -v [video_path] -s [save_path]
+$ python main.py -v [video_path] -s [save_path] -m [model_path]
 ```
 
 # Configs
