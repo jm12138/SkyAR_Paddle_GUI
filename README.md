@@ -55,16 +55,16 @@ optional arguments:
   -m MODEL_PATH, --model_path MODEL_PATH
   -v VIDEO_PATH, --video_path VIDEO_PATH
   -s SAVE_PATH,  --save_path  SAVE_PATH
+  -p PREVIEW_FRAMES_NUM, --preview_frames_num PREVIEW_FRAMES_NUM
 
   -c CONFIG, --config CONFIG
   All Choices：[
     'rainy', 'sunny', 'cloudy', 'galaxy', 'jupiter', 'sunset', 
     supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
   ]
-  Please set --config to None if use custom skybox
 
-  -p PREVIEW_FRAMES_NUM, --preview_frames_num PREVIEW_FRAMES_NUM
-
+  Set custom skybox
+  Please set --config to None if use custom skybox:
   --skybox_img SKYBOX_IMG
   --skybox_video SKYBOX_VIDEO
   --rain_cap_path RAIN_CAP_PATH
