@@ -1,6 +1,7 @@
 # SkyAR_Paddle
-A Paddle implementation of SkyAR.
-
+* A Paddle implementation of SkyAR.
+* Base repo： [jiupinjia/SkyAR](https://github.com/jiupinjia/SkyAR)
+* Paper：Zhengxia Zou. [Castle in the Sky: Dynamic Sky Replacement and Harmonization in Videos](https://arxiv.org/abs/2010.11800). CoRR, abs/2010.118003, 2020.
 # Examples
 * raw video：
 
