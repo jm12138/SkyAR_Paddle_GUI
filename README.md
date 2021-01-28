@@ -38,7 +38,7 @@
 # GUI
 * This implementation has a simple GUI. You can easy to use this program.
 
-  ![GUI](https://img-blog.csdnimg.cn/20210129024314744.png)
+  ![GUI](https://img-blog.csdnimg.cn/20210129025124334.png)
 
 # Quick Start
 * clone or download the code

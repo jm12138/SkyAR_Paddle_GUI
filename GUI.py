@@ -48,7 +48,7 @@ if __name__ == "__main__":
     ]
     root = Tk()
 
-    root.title('SkyAR GUI')
+    root.title('SkyAR Paddle GUI')
 
     root.iconbitmap(join(base_path, 'favicon.ico'))
 
