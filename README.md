@@ -57,18 +57,24 @@ optional arguments:
   -s SAVE_PATH,  --save_path  SAVE_PATH
 
   -c CONFIG, --config CONFIG
+  All Choices：[
+    'rainy', 'sunny', 'cloudy', 'galaxy', 'jupiter', 'sunset', 
+    supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
+  ]
+
   -p PREVIEW_FRAMES_NUM, --preview_frames_num PREVIEW_FRAMES_NUM
 
   --skybox_img SKYBOX_IMG
   --skybox_video SKYBOX_VIDEO
   --rain_cap_path RAIN_CAP_PATH
 
-  --is_show              is show
+  --is_show              to visual result 
   --is_rainy             is rainy
   --is_video_sky         is video skybox
+
+  More configs to tune the result:
   --disable_halo_effect  disable halo effect
   --auto_light_matching  is auto light matching
-
   --relighting_factor    RELIGHTING_FACTOR
   --recoloring_factor    RECOLORING_FACTOR
   --skybox_center_crop   SKYBOX_CENTER_CROP
