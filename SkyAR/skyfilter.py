@@ -90,7 +90,7 @@ class SkyFilter():
                     if k == 27:
                         self.video_writer.release()
                         break
-                print('processing: %d / %d ...' % (idx, self.m_frames))
+                print('processing: %d / %d ...' % (idx, frames_num))
 
                 img_HD_prev = img_HD
 

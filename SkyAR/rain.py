@@ -3,6 +3,7 @@ import numpy as np
 
 __all__ = ['Rain']
 
+
 class Rain():
     def __init__(self, rain_cap_path, rain_intensity=1.0, haze_intensity=4.0, gamma=2.0, light_correction=0.9):
         self.rain_intensity = rain_intensity

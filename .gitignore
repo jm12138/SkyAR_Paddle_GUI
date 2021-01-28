@@ -131,3 +131,6 @@ dmypy.json
 # model
 SkyAR/ResNet50FCN/__model__
 SkyAR/ResNet50FCN/__params__
+
+# save_videos
+save_videos/

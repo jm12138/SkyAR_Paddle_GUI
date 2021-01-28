@@ -13,6 +13,7 @@ class SkyAR:
             self.model_path = model_path
         else:
             self.model_path = os.path.join(self.directory, './ResNet50FCN')
+
     def MagicSky(
         self, video_path, save_path, config='jupiter',
         is_rainy=False, preview_frames_num=0, is_video_sky=False, is_show=False,
@@ -61,4 +62,3 @@ class SkyAR:
         )
 
         skyfilter.run(preview_frames_num)
-

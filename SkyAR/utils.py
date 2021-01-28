@@ -3,12 +3,13 @@ import numpy as np
 from sklearn.neighbors import KernelDensity
 
 __all__ = [
-    'build_transformation_matrix', 
+    'build_transformation_matrix',
     'update_transformation_matrix',
     'estimate_partial_transform',
     'removeOutliers',
     'guidedfilter'
 ]
+
 
 def build_transformation_matrix(transform):
     """Convert transform list to transformation matrix
@@ -61,6 +62,7 @@ def estimate_partial_transform(matched_keypoints):
         dx = dy = da = 0
 
     return [dx, dy, da]
+
 
 def removeOutliers(prev_pts, curr_pts):
 

@@ -4,11 +4,12 @@ import numpy as np
 from SkyAR.rain import Rain
 from SkyAR.utils import build_transformation_matrix, update_transformation_matrix, estimate_partial_transform, removeOutliers, guidedfilter
 
+
 class SkyBox():
     def __init__(
-        self, out_size, skybox_img, skybox_video, halo_effect, 
-        auto_light_matching, relighting_factor, recoloring_factor, 
-        skybox_center_crop, rain_cap_path, is_video, is_rainy):
+            self, out_size, skybox_img, skybox_video, halo_effect,
+            auto_light_matching, relighting_factor, recoloring_factor,
+            skybox_center_crop, rain_cap_path, is_video, is_rainy):
 
         self.out_size_w, self.out_size_h = out_size
 
@@ -20,17 +21,17 @@ class SkyBox():
 
         self.halo_effect = halo_effect
         self.auto_light_matching = auto_light_matching
-        
+
         self.relighting_factor = relighting_factor
         self.recoloring_factor = recoloring_factor
-        
+
         self.skybox_center_crop = skybox_center_crop
         self.load_skybox()
         self.rainmodel = Rain(
-            rain_cap_path=rain_cap_path, 
-            rain_intensity=0.8, 
-            haze_intensity=0.0, 
-            gamma=1.0, 
+            rain_cap_path=rain_cap_path,
+            rain_intensity=0.8,
+            haze_intensity=0.0,
+            gamma=1.0,
             light_correction=1.0
         )
 
