@@ -3,13 +3,16 @@ from SkyAR.skyfilter import SkyFilter
 
 
 class SkyAR:
-    def __init__(self):
+    def __init__(self, model_path=None):
         super(SkyAR, self).__init__()
         self.imgs = ['cloudy', 'district9ship', 'floatingcastle',
                      'galaxy', 'jupiter', 'rainy', 'sunny', 'sunset', 'supermoon']
         self.videos = ['thunderstorm']
         self.directory, _ = os.path.split(os.path.abspath(__file__))
-
+        if model_path:
+            self.model_path = model_path
+        else:
+            self.model_path = os.path.join(self.directory, './ResNet50FCN')
     def MagicSky(
         self, video_path, save_path, config='jupiter',
         is_rainy=False, preview_frames_num=0, is_video_sky=False, is_show=False,
@@ -40,7 +43,7 @@ class SkyAR:
                 self.directory, 'rain_streaks', 'videoplayback.mp4')
 
         skyfilter = SkyFilter(
-            model_path=os.path.join(self.directory, './ResNet50FCN'),
+            model_path=self.model_path,
             video_path=video_path,
             save_path=save_path,
             in_size=(384, 384),
