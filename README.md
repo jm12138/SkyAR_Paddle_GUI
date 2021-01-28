@@ -1,5 +1,5 @@
-# SkyAR_Paddle
-* A Paddle implementation of SkyAR.
+# SkyAR_Paddle_GUI
+* A Paddle and GUI implementation of SkyAR.
 * Base repo： [jiupinjia/SkyAR](https://github.com/jiupinjia/SkyAR)
 * Paper：Zhengxia Zou. [Castle in the Sky: Dynamic Sky Replacement and Harmonization in Videos](https://arxiv.org/abs/2010.11800). CoRR, abs/2010.118003, 2020.
 # Examples
@@ -34,6 +34,11 @@
 
 # License
 ![Creative Commons License](https://camo.githubusercontent.com/f05d4039b67688cfdf339d2a445ad686a60551f9891734c418f7096184de5fac/68747470733a2f2f692e6372656174697665636f6d6d6f6e732e6f72672f6c2f62792d6e632d73612f342e302f38387833312e706e67) [SkyAR](https://github.com/jiupinjia/SkyAR) by [Zhengxia Zou](http://www-personal.umich.edu/~zzhengxi/) is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+# GUI
+* This implementation has a simple GUI. You can easy to use this program.
+
+  ![GUI](https://img-blog.csdnimg.cn/20210129024314744.png)
 
 # Quick Start
 * clone or download the code
