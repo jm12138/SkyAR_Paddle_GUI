@@ -40,13 +40,21 @@
 
 * download the pretrained model：[link](https://bj.bcebos.com/v1/ai-studio-online/232021343ede409f92d512707c04d870f8b267035e86412084cf838f83afc6cb?responseContentDisposition=attachment%3B%20filename%3DResNet50FCN.zip&authorization=bce-auth-v1%2F0ef6765c1e494918bc0d4c3ca3e5c6d1%2F2021-01-25T08%3A44%3A17Z%2F-1%2F%2F7afd50b9b0d15e6eec3cac9ca3c213d33695474539b9fdc6cfe8d1a8d8525909)
 
-* unpack the pretrained model
-
+* unpack the pretrained model into ./SkyAR
+```
+  -SkyAR  
+    -ResNet50FCN  
+      -__model__  
+      -__params__  
+```
 * run main.py
 ```shell
-$ python main.py -v [video_path] -s [save_path] -m [model_path]
+$ python main.py -v [video_path] -s [save_path]
 ```
-
+* or run GUI version
+```shell
+$ python GUI.py
+```
 # Configs
 ```
 optional arguments:
@@ -60,7 +68,7 @@ optional arguments:
   -c CONFIG, --config CONFIG
   All Choices：[
     'rainy', 'sunny', 'cloudy', 'galaxy', 'jupiter', 'sunset', 
-    supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
+    'supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
   ]
 
   Set custom skybox
