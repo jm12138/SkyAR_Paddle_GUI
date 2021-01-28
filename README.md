@@ -61,6 +61,7 @@ optional arguments:
     'rainy', 'sunny', 'cloudy', 'galaxy', 'jupiter', 'sunset', 
     supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
   ]
+  Please set --config to None if use custom skybox
 
   -p PREVIEW_FRAMES_NUM, --preview_frames_num PREVIEW_FRAMES_NUM
 
