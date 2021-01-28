@@ -1,35 +1,16 @@
-'''4.使用回调函数打印当前的值'''
-# -*- coding: utf-8 -*-
-from tkinter import Tk, Button, StringVar, IntVar, Radiobutton, Checkbutton, Scale, HORIZONTAL
- 
-from SkyAR import SkyAR
-from os.path import abspath, split, join
 import sys
-try:
-    base_path = sys._MEIPASS
-except:
-    base_path = split(abspath(__file__))[0]
-
-global config_list
-config_list = [
-    'rainy', 'sunny', 'cloudy', 'galaxy', 'jupiter', 'sunset', 
-    'supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
-]
-root = Tk()
- 
-root.title('SkyAR GUI')
-
-
-root.iconbitmap(join(base_path, 'favicon.ico'))
-
-root.geometry('300x800')
+from os.path import abspath, split, join
 from tkinter.filedialog import askopenfilename, asksaveasfilename
+from tkinter import Tk, Button, StringVar, IntVar, Radiobutton, Checkbutton, Scale, HORIZONTAL
+from SkyAR import SkyAR
+
 
 def file_select(item, types, is_save=False):
     if not is_save:
         item.set(askopenfilename(title='choose an video', filetypes=types))
     else:
         item.set(asksaveasfilename(title='save result', filetypes=types))
+
 
 def start():
     configs = {
@@ -53,82 +34,104 @@ def start():
     skyar = SkyAR()
     skyar.MagicSky(**configs)
 
-video_path = StringVar() 
-Button(root, text='video_path', command=lambda: file_select(video_path, (("image", "*.mp4"), ("all", "*")))).pack()
-save_path = StringVar()
-save_path.set('save_videos/result.mp4')
-Button(root, text='save_path', command=lambda: file_select(save_path, (("image", "*.mp4"), ("all", "*")), True)).pack()
-skybox_img = StringVar() 
-Button(root, text='skybox_img', command=lambda: file_select(skybox_img, (("image", "*.jpg; *.png; *.bmp; *.jpeg"), ("all", "*")))).pack()
-skybox_video = StringVar() 
-Button(root, text='skybox_video', command=lambda: file_select(skybox_video, (("image", "*.mp4"), ("all", "*")))).pack()
-rain_cap_path = StringVar() 
-Button(root, text='rain_cap_path', command=lambda: file_select(rain_cap_path, (("image", "*.mp4"), ("all", "*")))).pack()
 
+if __name__ == "__main__":
+    try:
+        base_path = sys._MEIPASS
+    except:
+        base_path = split(abspath(__file__))[0]
 
-config_choose = IntVar()
-config_choose.set(4)
-for i, value in enumerate(config_list):
-    b = Radiobutton(root, text=value, variable=config_choose, value=i)
-    b.pack()
+    global config_list
+    config_list = [
+        'rainy', 'sunny', 'cloudy', 'galaxy', 'jupiter', 'sunset',
+        'supermoon', 'district9ship', 'floatingcastle', 'thunderstorm'
+    ]
+    root = Tk()
 
-is_rainy = StringVar()
-is_rainy.set(0)
-br = Checkbutton(root, text='is_rainy', variable=is_rainy)
-br.pack()
-halo_effect = StringVar()
-halo_effect.set(1)
-bh = Checkbutton(root, text='halo_effect', variable=halo_effect)
-bh.pack()
-auto_light_matching = StringVar()
-auto_light_matching.set(0)
-ba = Checkbutton(root, text='auto_light_matching', variable=auto_light_matching)
-ba.pack()
-preview = StringVar()
-preview.set(1)
-ba = Checkbutton(root, text='preview', variable=preview)
-ba.pack()
+    root.title('SkyAR GUI')
 
+    root.iconbitmap(join(base_path, 'favicon.ico'))
 
-relighting_factor = StringVar()
-relighting_factor.set(0.8)
-Scale(root,
-      label='relighting_factor',
-      length=200,
-      from_=0.,  # 设置最小值
-      to=1.0,  # 设置最大值
-      resolution=0.001,  # 设置步距值
-      orient=HORIZONTAL,  # 设置水平方向
-      variable=relighting_factor,  # 绑定变量
-      digits=3,  # 设置显示的位数为8
-      ).pack()
+    root.geometry('300x800')
 
+    video_path = StringVar()
+    Button(root, text='video_path', command=lambda: file_select(
+        video_path, (("image", "*.mp4"), ("all", "*")))).pack()
+    save_path = StringVar()
+    save_path.set('save_videos/result.mp4')
+    Button(root, text='save_path', command=lambda: file_select(
+        save_path, (("image", "*.mp4"), ("all", "*")), True)).pack()
+    skybox_img = StringVar()
+    Button(root, text='skybox_img', command=lambda: file_select(
+        skybox_img, (("image", "*.jpg; *.png; *.bmp; *.jpeg"), ("all", "*")))).pack()
+    skybox_video = StringVar()
+    Button(root, text='skybox_video', command=lambda: file_select(
+        skybox_video, (("image", "*.mp4"), ("all", "*")))).pack()
+    rain_cap_path = StringVar()
+    Button(root, text='rain_cap_path', command=lambda: file_select(
+        rain_cap_path, (("image", "*.mp4"), ("all", "*")))).pack()
 
-recoloring_factor = StringVar()
-recoloring_factor.set(0.5)
-Scale(root,
-      label='recoloring_factor',
-      length=200,
-      from_=0.,  # 设置最小值
-      to=1.0,  # 设置最大值
-      resolution=0.001,  # 设置步距值
-      orient=HORIZONTAL,  # 设置水平方向
-      variable=recoloring_factor,  # 绑定变量
-      digits=3,  # 设置显示的位数为8
-      ).pack()
+    config_choose = IntVar()
+    config_choose.set(4)
+    for i, value in enumerate(config_list):
+        b = Radiobutton(root, text=value, variable=config_choose, value=i)
+        b.pack()
 
+    is_rainy = StringVar()
+    is_rainy.set(0)
+    br = Checkbutton(root, text='is_rainy', variable=is_rainy)
+    br.pack()
+    halo_effect = StringVar()
+    halo_effect.set(1)
+    bh = Checkbutton(root, text='halo_effect', variable=halo_effect)
+    bh.pack()
+    auto_light_matching = StringVar()
+    auto_light_matching.set(0)
+    ba = Checkbutton(root, text='auto_light_matching',
+                     variable=auto_light_matching)
+    ba.pack()
+    preview = StringVar()
+    preview.set(1)
+    ba = Checkbutton(root, text='preview', variable=preview)
+    ba.pack()
 
-skybox_center_crop = StringVar()
-skybox_center_crop.set(0.5)
-Scale(root,
-      label='skybox_center_crop',
-      length=200,
-      from_=0.,  # 设置最小值
-      to=1.0,  # 设置最大值
-      resolution=0.001,  # 设置步距值
-      orient=HORIZONTAL,  # 设置水平方向
-      variable=skybox_center_crop,  # 绑定变量
-      digits=3,  # 设置显示的位数为8
-      ).pack()
-Button(root, text='start', command=start).pack()
-root.mainloop()
+    relighting_factor = StringVar()
+    relighting_factor.set(0.8)
+    Scale(root,
+          label='relighting_factor',
+          length=200,
+          from_=0.,
+          to=1.0,
+          resolution=0.001,
+          orient=HORIZONTAL,
+          variable=relighting_factor,
+          digits=3,
+          ).pack()
+
+    recoloring_factor = StringVar()
+    recoloring_factor.set(0.5)
+    Scale(root,
+          label='recoloring_factor',
+          length=200,
+          from_=0.,
+          to=1.0,
+          resolution=0.001,
+          orient=HORIZONTAL,
+          variable=recoloring_factor,
+          digits=3,
+          ).pack()
+
+    skybox_center_crop = StringVar()
+    skybox_center_crop.set(0.5)
+    Scale(root,
+          label='skybox_center_crop',
+          length=200,
+          from_=0.,
+          to=1.0,
+          resolution=0.001,
+          orient=HORIZONTAL,
+          variable=skybox_center_crop,
+          digits=3,
+          ).pack()
+    Button(root, text='start', command=start).pack()
+    root.mainloop()
