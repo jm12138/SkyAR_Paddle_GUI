@@ -89,6 +89,7 @@ class SkyFilter():
                     k = cv2.waitKey(1)
                     if (k == 27) or (cv2.getWindowProperty('preview', 0) == -1):
                         self.video_writer.release()
+                        cv2.destroyAllWindows()
                         break
                 print('processing: %d / %d ...' % (idx, frames_num))
 
@@ -96,4 +97,5 @@ class SkyFilter():
 
             else:
                 self.video_writer.release()
+                cv2.destroyAllWindows()
                 break

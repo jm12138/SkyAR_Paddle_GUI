@@ -40,6 +40,10 @@
 
   ![GUI](https://img-blog.csdnimg.cn/20210129025124334.png)
 
+# GUI Executable Version
+* GUI Executable file has been release：[link](./releases)
+
+* It made by Pyinstaller, and only support the cpu with avx instruction set.
 # Quick Start
 * clone or download the code
 
