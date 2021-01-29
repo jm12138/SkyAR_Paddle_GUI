@@ -41,7 +41,7 @@
   ![GUI](https://img-blog.csdnimg.cn/20210129025124334.png)
 
 # GUI Executable Version
-* GUI Executable file has been release：[link](./releases)
+* GUI Executable file has been release：[link](https://github.com/jm12138/SkyAR_Paddle_GUI/releases)
 
 * It made by Pyinstaller, and only support the cpu with avx instruction set.
 # Quick Start
