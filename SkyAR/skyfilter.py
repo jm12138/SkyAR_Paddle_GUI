@@ -85,9 +85,9 @@ class SkyFilter():
                     show_img = np.concatenate([frame, result], 1)
                     h, w = show_img.shape[:2]
                     show_img = cv2.resize(show_img, (720, int(720/w*h)))
-                    cv2.imshow('result', show_img)
+                    cv2.imshow('preview', show_img)
                     k = cv2.waitKey(1)
-                    if (k == 27) or (cv2.getWindowProperty('result', 0) == -1):
+                    if (k == 27) or (cv2.getWindowProperty('preview', 0) == -1):
                         self.video_writer.release()
                         break
                 print('processing: %d / %d ...' % (idx, frames_num))
