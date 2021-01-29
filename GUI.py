@@ -2,6 +2,8 @@ import sys
 from os.path import abspath, split, join
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 from tkinter import Tk, Button, StringVar, IntVar, Radiobutton, Checkbutton, Scale, HORIZONTAL
+from tkinter.ttk import Progressbar
+from threading import Thread
 from SkyAR import SkyAR
 
 
@@ -11,6 +13,13 @@ def file_select(item, types, is_save=False):
     else:
         item.set(asksaveasfilename(title='save result', filetypes=types))
 
+def run(configs):
+    skyar = SkyAR()
+    skyar.MagicSky(**configs)
+    bar.stop()
+    start_button['bg'] = 'SystemButtonFace'
+    start_button['state'] = 'normal'
+    start_button['text'] = 'start'
 
 def start():
     configs = {
@@ -31,8 +40,12 @@ def start():
         'skybox_center_crop': float(skybox_center_crop.get())
     }
     print(configs)
-    skyar = SkyAR()
-    skyar.MagicSky(**configs)
+    start_button['bg'] = 'red'
+    start_button['text'] = 'wait'
+    start_button['state'] = 'disabled'
+    bar.start()
+    t = Thread(target=run, args=(configs,))
+    t.start()
 
 
 if __name__ == "__main__":
@@ -58,7 +71,7 @@ if __name__ == "__main__":
     Button(root, text='video_path', command=lambda: file_select(
         video_path, (("image", "*.mp4"), ("all", "*")))).pack()
     save_path = StringVar()
-    save_path.set('save_videos/result.mp4')
+    save_path.set('result.mp4')
     Button(root, text='save_path', command=lambda: file_select(
         save_path, (("image", "*.mp4"), ("all", "*")), True)).pack()
     skybox_img = StringVar()
@@ -133,5 +146,8 @@ if __name__ == "__main__":
           variable=skybox_center_crop,
           digits=3,
           ).pack()
-    Button(root, text='start', command=start).pack()
+    start_button = Button(root, text='start', command=start)
+    start_button.pack()
+    bar = Progressbar(root, length = 200, value = 0, mode = "indeterminate")
+    bar.pack(pady = 10)
     root.mainloop()
